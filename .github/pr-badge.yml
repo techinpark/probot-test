@@ -1,5 +1,5 @@
 label: "JIRA"
-url: "https://kidsnote.atlassian.net/browse/$issuePrefix"
+url: "https://fernandotest.atlassian.net/browse/$issuePrefix"
 message: "$issuePrefix"
 color: "EFEFCC"
 when: "$issuePrefix" 
