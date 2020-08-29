@@ -1,0 +1,5 @@
+label: "JIRA"
+url: "https://kidsnote.atlassian.net/browse/$issuePrefix"
+message: "$issuePrefix"
+color: "0052CC"
+when: "$issuePrefix" 
