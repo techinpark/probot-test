@@ -12,6 +12,6 @@ jobs:
       - name: Append to Gist
         uses: andymckay/append-gist-action@0.1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GIST_TOKEN }}
           gistURL: "https://gist.github.com/techinpark/733f9b9d542904e18c6466efd8a95957" 
           file: store.db
