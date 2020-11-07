@@ -13,5 +13,5 @@ jobs:
         uses: andymckay/append-gist-action@0.1
         with:
           token: ${{ secrets.GIST_TOKEN }}
-          gistURL: "https://gist.github.com/techinpark/733f9b9d542904e18c6466efd8a95957" 
+          gistURL: "https://gist.github.com/techinpark/abc051d2bc6bb03d3365d86aac597dca" 
           file: store.db
