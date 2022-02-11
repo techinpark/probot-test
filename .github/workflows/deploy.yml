@@ -2,14 +2,14 @@ on: issue_comment
 
 jobs:
   pr_commented:
-    # This job only runs for pull request comments
-    - uses: actions/checkout@v2
-      with: 
-        fetch-depth: 0
+    # This job only runs for pull request comments 
     name: PR comment
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with: 
+          fetch-depth: 0
       - run: |
           echo A comment on PR $NUMBER
           git rev-parse --abbrev-ref HEAD 
