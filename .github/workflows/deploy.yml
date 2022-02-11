@@ -32,8 +32,8 @@ jobs:
           fetch-depth: 0
           repository: ${{ fromJSON(steps.get-pr.outputs.result).head.repo.full_name }}
           ref: ${{ fromJSON(steps.get-pr.outputs.result).head.sha }} # or .head.ref for branch name
-      - id: deploy
-        run: make feature-dev-upload
+      # - id: deploy
+      #   run: make feature-dev-upload
       
       - uses: actions/github-script@v5
         with:
@@ -43,5 +43,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '🚀 테스트 배포완료 되었습니다'
+              body: '🚀 테스트 배포완료 되었습니다 @techinpark'
             })
