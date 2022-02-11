@@ -7,12 +7,9 @@ jobs:
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
+      - name: Get branch names.
+        id: branch-names
+        uses: tj-actions/branch-names@v5.1
       - uses: actions/checkout@v2
-        with: 
-          fetch-depth: 0
-          ref: ${{ github.head_ref }}
-      - run: |
-          echo A comment on PR $NUMBER
-          git rev-parse --abbrev-ref HEAD 
-        env:
-          NUMBER: ${{ github.event.issue.number }}
+        with:
+          ref: ${{ steps.branch-names.outputs.head_ref_branch }}
