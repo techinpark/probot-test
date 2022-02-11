@@ -7,7 +7,7 @@ on:
 jobs:
   pr-commented:
     name: PR commented
-    if: github.event.issue.pull_request && github.event.comment.body == "/deploy"
+    if: github.event.issue.pull_request && github.event.comment.body == '/deploy'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v3
