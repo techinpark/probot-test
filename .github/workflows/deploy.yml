@@ -7,7 +7,7 @@ on:
 jobs:
   pr-commented:
     name: PR commented
-    if: github.event.issue.pull_request
+    if: github.event.issue.pull_request && github.event.issue.comment.body == "/deploy"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v3
@@ -29,8 +29,12 @@ jobs:
             }
       - uses: actions/checkout@v2
         with:
+          fetch-depth: 0
           repository: ${{ fromJSON(steps.get-pr.outputs.result).head.repo.full_name }}
           ref: ${{ fromJSON(steps.get-pr.outputs.result).head.sha }} # or .head.ref for branch name
+      - id: deploy
+        run: make feature-dev-upload
+      
       - uses: actions/github-script@v5
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -39,5 +43,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Thanks for reporting!'
+              body: '🚀 테스트 배포완료 되었습니다'
             })
