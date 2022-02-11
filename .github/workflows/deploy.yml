@@ -3,6 +3,9 @@ on: issue_comment
 jobs:
   pr_commented:
     # This job only runs for pull request comments
+    - uses: actions/checkout@v2
+      with: 
+        fetch-depth: 0
     name: PR comment
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
