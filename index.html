@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pretendard Font Test</title>
+<style>
+    @font-face {
+        font-family: 'pretendard-bold';
+        src: url('pretendard-bold.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'pretendard-regular';
+        src: url('pretendard-regular.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'pretendard-semibold';
+        src: url('pretendard-semibold.ttf') format('truetype');
+    }
+    @font-face {
+        font-family: 'pretendard-medium';
+        src: url('pretendard-medium.ttf') format('truetype');
+    }
+    body {
+        font-size: 16px;
+        margin: 20px;
+    }
+    .container {
+        display: flex;
+        justify-content: space-around;
+    }
+    .column {
+        width: 25%;
+        padding: 10px;
+        border: 1px solid black;
+    }
+    h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+    p {
+        margin: 10px 0;
+    }
+</style>
+</head>
+<body>
+<h1>Font Comparison: Pretendard vs. System Font</h1>
+<div class="container">
+    <div class="column">
+        <h2>Bold</h2>
+        <p class="pretendard-bold">마일리지</p>
+        <p class="system-font">마일리지</p>
+    </div>
+    <div class="column">
+        <h2>Semibold</h2>
+        <p class="pretendard-semibold">마일리지</p>
+        <p class="system-font">마일리지</p>
+    </div>
+    <div class="column">
+        <h2>Medium</h2>
+        <p class="pretendard-medium">마일리지</p>
+        <p class="system-font">마일리지</p>
+    </div>
+    <div class="column">
+        <h2>Regular</h2>
+        <p class="pretendard-regular">마일리지</p>
+        <p class="system-font">마일리지</p>
+    </div>
+</div>
+</body>
+</html>
